@@ -37,7 +37,6 @@
             position: relative;
         }
 
-        /* Animated gradient background */
         .bg-gradient {
             position: fixed;
             top: 0;
@@ -67,7 +66,6 @@
             }
         }
 
-        /* Aurora effect */
         .aurora {
             position: fixed;
             top: 0;
@@ -131,7 +129,6 @@
             }
         }
 
-        /* Floating orbs */
         .orbs {
             position: fixed;
             top: 0;
@@ -168,7 +165,6 @@
             }
         }
 
-        /* Light streaks */
         .streaks {
             position: fixed;
             top: 0;
@@ -205,7 +201,6 @@
             }
         }
 
-        /* Shimmer overlay */
         .shimmer {
             position: fixed;
             top: 0;
@@ -237,7 +232,6 @@
             }
         }
 
-        /* Main container */
         .container {
             min-height: 100vh;
             min-height: -webkit-fill-available;
@@ -250,14 +244,12 @@
             z-index: 10;
         }
 
-        /* Content wrapper */
         .content {
             max-width: 680px;
             width: 100%;
             text-align: center;
         }
 
-        /* Decorative line */
         .line {
             width: 1px;
             height: 80px;
@@ -286,7 +278,6 @@
             }
         }
 
-        /* Subtitle */
         .subtitle {
             font-family: 'Cormorant', serif;
             font-size: clamp(0.75rem, 2vw, 0.875rem);
@@ -309,7 +300,6 @@
             }
         }
 
-        /* Main name */
         .name {
             font-family: 'Bodoni Moda', serif;
             font-size: clamp(4rem, 15vw, 9rem);
@@ -360,7 +350,6 @@
             }
         }
 
-        /* Birthday text */
         .birthday-text {
             font-family: 'Cinzel', serif;
             font-size: clamp(1rem, 3vw, 1.25rem);
@@ -386,7 +375,6 @@
             }
         }
 
-        /* Ornament */
         .ornament {
             display: flex;
             align-items: center;
@@ -422,7 +410,6 @@
             }
         }
 
-        /* Message */
         .message {
             font-family: 'Cormorant', serif;
             font-size: clamp(1.125rem, 3vw, 1.375rem);
@@ -445,7 +432,6 @@
             }
         }
 
-        /* Quote section */
         .quote-section {
             margin: 50px 0;
             padding: 40px 0;
@@ -501,7 +487,6 @@
             text-transform: uppercase;
         }
 
-        /* Signature */
         .signature {
             margin-top: 60px;
             animation: fadeSlideUp 1s ease-out 1.4s both;
@@ -522,7 +507,6 @@
             margin-top: 8px;
         }
 
-        /* Bottom decoration */
         .bottom-line {
             width: 1px;
             height: 60px;
@@ -531,7 +515,6 @@
             animation: fadeIn 1.5s ease-out 1.6s both, linePulse 3s ease-in-out 3s infinite;
         }
 
-        /* Trademark / Credit */
         .trademark {
             margin-top: 80px;
             padding-top: 30px;
@@ -550,7 +533,6 @@
             text-shadow: 0 0 15px rgba(201, 162, 39, 0.4);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 50px 20px;
@@ -647,7 +629,6 @@
             }
         }
 
-        /* Reduce motion for accessibility */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -655,39 +636,29 @@
             }
         }
 
-        /* Selection styling */
         ::selection {
             background: var(--gold);
             color: var(--warm-black);
         }
 
-        /* Smooth scroll */
         html {
             scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- Background layers -->
     <div class="bg-gradient"></div>
     
-    <!-- Aurora effect -->
     <div class="aurora">
         <div class="aurora-beam"></div>
         <div class="aurora-beam"></div>
         <div class="aurora-beam"></div>
     </div>
     
-    <!-- Floating orbs -->
     <div class="orbs" id="orbs"></div>
-    
-    <!-- Light streaks -->
     <div class="streaks" id="streaks"></div>
-    
-    <!-- Shimmer overlay -->
     <div class="shimmer"></div>
 
-    <!-- Main content -->
     <main class="container">
         <div class="content">
             <div class="line"></div>
@@ -724,7 +695,6 @@
             
             <div class="bottom-line"></div>
 
-            <!-- Trademark -->
             <div class="trademark">
                 <p class="rune-text">ᛃᚨᛊᛟᚾ</p>
             </div>
@@ -732,7 +702,6 @@
     </main>
 
     <script>
-        // Create floating orbs
         function createOrbs() {
             const container = document.getElementById('orbs');
             const isMobile = window.innerWidth < 768;
@@ -753,7 +722,6 @@
             }
         }
 
-        // Create light streaks
         function createStreaks() {
             const container = document.getElementById('streaks');
             const isMobile = window.innerWidth < 768;
@@ -773,7 +741,6 @@
             }
         }
 
-        // Continuous orb generation
         function continuousOrbs() {
             const container = document.getElementById('orbs');
             const isMobile = window.innerWidth < 768;
@@ -791,7 +758,6 @@
                     
                     container.appendChild(orb);
                     
-                    // Remove after animation
                     setTimeout(() => {
                         if (orb.parentNode) {
                             orb.remove();
@@ -801,7 +767,6 @@
             }, 3000);
         }
 
-        // Continuous streak generation
         function continuousStreaks() {
             const container = document.getElementById('streaks');
             const isMobile = window.innerWidth < 768;
@@ -818,7 +783,6 @@
                     
                     container.appendChild(streak);
                     
-                    // Remove after animation
                     setTimeout(() => {
                         if (streak.parentNode) {
                             streak.remove();
@@ -828,7 +792,6 @@
             }, 800);
         }
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             createOrbs();
             createStreaks();
@@ -836,7 +799,6 @@
             continuousStreaks();
         });
 
-        // Handle visibility change to pause/resume animations
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
                 document.body.style.animationPlayState = 'paused';
